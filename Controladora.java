@@ -3,23 +3,29 @@ package Logica;
 
 
 public class Controladora {
-    public double sumar (double num1, double num2){
-        double resultado = num1 + num2; 
-        return resultado; 
+    String nombres[] = new String[5]; 
+    public void agregarNombre( String nombreAgregar){ 
+        for (int i = 0; i < nombres.length; i++){
+             
+            if (nombres[i] == null){ 
+                nombres[i] = nombreAgregar; 
+                
+                System.out.println("se llena el i (interno) " + i  + " y el nombre es " + nombres[i] );
+                i = nombres.length; 
+            }
+        }
     }
-    
-    public double restar (double num1, double num2){
-        double resultado = num1 - num2; 
-        return resultado; 
-    }
-    
-    public double multiplicar (double num1, double num2){
-        double resultado = num1 * num2; 
-        return resultado; 
-    }
-    
-    public double dividir (double num1, double num2){
-        double resultado = num1 / num2; 
-        return resultado; 
-    }
+
+    public boolean buscarNombre(String nombreBuscar){ 
+        boolean estaONoEsta = false; 
+        for (int i = 0; i < nombres.length; i++){
+            if (nombres[i].equals(nombreBuscar)){
+                estaONoEsta = true; 
+                
+            }
+        }
+                    
+        return estaONoEsta;        
+                
+    }    
 }
